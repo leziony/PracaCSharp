@@ -1,0 +1,20 @@
+﻿<Window x:Class="ToDoList3.WindowAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoList3"
+        mc:Ignorable="d"
+        Title="Dodaj Zadanie" Height="200" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="157*"/>
+            <RowDefinition Height="27*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="name_input" HorizontalAlignment="Left" Margin="22,45,0,65" TextWrapping="Wrap" Text="" Width="201"/>
+        <DatePicker x:Name="date_input" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65,107,0,0" Height="24" Width="104"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="97,0,0,0" Grid.Row="1" VerticalAlignment="Center" Click="Button_Click" Height="20" Width="40"/>
+        <Label Content="Podaj nazwę i datę wykonania zadania" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

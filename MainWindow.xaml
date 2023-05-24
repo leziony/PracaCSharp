@@ -1,0 +1,39 @@
+﻿<Window x:Class="ToDoList3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoList3"
+        mc:Ignorable="d"
+        Title="Lista Zadan" Height="500" Width="600" Loaded="Window_Loaded" Closed="Window_Closed" GotKeyboardFocus="Window_GotKeyboardFocus">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter HorizontalAlignment="Center" Height="0" Margin="0,113,0,0" VerticalAlignment="Top" Width="600" RenderTransformOrigin="0.5,0.5">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+        <DataGrid x:Name="Results"  Margin="0,103,10,10" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Termin" Binding="{Binding Deadline, StringFormat=d}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn1" Content="Dodaj Zadanie" HorizontalAlignment="Left" Margin="54,24,0,0" VerticalAlignment="Top" Click="Button_Click_Add" Height="22" Width="90"/>
+        <Button x:Name="btn2" Content="Edytuj Zadanie" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Click="Button_Click_Edit" Height="22" Width="102"/>
+        <DatePicker x:Name="date_select" HorizontalAlignment="Left" Margin="108,79,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" SelectedDateChanged="Date_select_SelectedDateChanged"/>
+        <Button x:Name="btn3" Content="Usuń Zadanie" HorizontalAlignment="Left" Margin="480,24,0,0" VerticalAlignment="Top" Click="Button_Click_Delete" Height="22" Width="83"/>
+        <Label Content="Zadania z dnia:" HorizontalAlignment="Left" Margin="0,77,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn4" Content="Pokaż wszystkie zadania" HorizontalAlignment="Left" Margin="249,77,0,0" VerticalAlignment="Top" Click="Button_Click_All" Height="22" Width="134"/>
+        <Button x:Name="btn5" Content="Sprawdzenie zadań" HorizontalAlignment="Left" Margin="401,77,0,0" VerticalAlignment="Top" Click="Button_Click_Check" Height="22" Width="170"/>
+
+    </Grid>
+</Window>
